@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+button {
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+h4 {
+  margin-bottom: 15px;
+  hyphens: auto;
+}
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  background: silver;
+}
+
+.menu__list {
+  display: flex;
+}
+
+.menu__link {
+  display: block;
+  padding:  15px;
+  color: black;
+  text-decoration: none;
+  border: 2px solid transparent;
+}
+
+.menu__link:hover {
+  border-color: black;
+}
+
+.menu__link_active {
+  border-color: black;
+  background-color: black;
+  color: white;
+}
+
+.posts__title,
+.post__title {
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid silver;
+}
+
+.post {
+  margin: 5px;
+  padding: 10px;
+  border: 1px solid silver;
+}
+
+.btn-back {
+  padding: 5px;
+  margin: 15px 0;
+  cursor: pointer;
+}
+
+.footer {
+  margin-top: auto;
+  padding: 20px 15px;
+  background: silver;
+}
+
+.visited {
+  background-color: rgb(237, 237, 237);
+}
+
+.last-post {
+  width: 250px;
+  height: auto;
+  padding: 15px;
+  border: 1px solid silver;
+  position: absolute;
+  top: 81px;
+  left: 25px;
+}
+
+.last-post__title,
+.history-page__page {
+  margin-top: 15px;
+}
+
+.history-page {
+  display: none;
+  width: 250px;
+  height: 500px;
+  overflow-y: scroll;
+  padding: 15px;
+  border: 1px solid silver;
+  position: absolute;
+  top: 81px;
+  right: 25px;
+}
