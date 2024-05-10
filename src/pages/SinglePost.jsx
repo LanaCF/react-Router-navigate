@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
+import { handleNavLinkClick } from '../utils/handleNavLinkClick';
+import { useVisitedPages } from '../hooks/useVisitedPages';
 
 export const SinglePost = () => {
+    const { setVisitedPages } = useVisitedPages();
     const navigate = useNavigate();
     const { pathname } = useLocation();
     const { id } = useParams();
@@ -14,8 +17,11 @@ export const SinglePost = () => {
             .catch(error => console.error('Помилка отримання даних про пост:', error));
     }, [id]);
 
+    console.log('P', pathname)
+
     const gobackHandler = () => {
-        navigate('/blog', { state: { id } }); 
+        navigate('/blog', { state: { id }, from: { pathname } }); 
+        handleNavLinkClick(pathname, setVisitedPages);
     }
 
     if (!post) {

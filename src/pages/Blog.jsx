@@ -18,6 +18,10 @@ const Blog = () => {
         <div className='posts-page'>
             <h1>Blog</h1>
 
+            <div className="posts-page__create-new-post">
+                <Link to='/blog/new' state={ { from: '/blog/new' } }>Create new post</Link>
+            </div>
+
             <div className="posts">
                 <h2 className='post__title'>Post list</h2>
                 <ul className="posts__list">
@@ -28,7 +32,7 @@ const Blog = () => {
 
                             return (
                                 <li key={ post.id } className={ `post ${ additClass }`}>
-                                    <Link to={ `${ post.id }` } state={ { id: post.id } }>
+                                    <Link to={ `${ post.id }` } state={ { id: post.id, from: location?.pathname } }>
                                         <h3 className='post__title'>{ post.title }</h3>
                                         <p className="post__body">{ post.body }</p>
                                     </Link>

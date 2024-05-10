@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 export const LastPost = ({ setLastVisitedPostId }) => {
-    const location = useLocation();
-    const lastVisitedPostId = location.state && location.state.id;
+    const { state } = useLocation();
+    const lastVisitedPostId = state?.id || '';
     const [lastVisitedPost, setLastVisitedPost] = useState(null);
 
     useEffect(() => {
@@ -23,7 +23,7 @@ export const LastPost = ({ setLastVisitedPostId }) => {
             <h4>Останній переглянутий пост</h4>
             <hr />
             {lastVisitedPost && (
-                <Link to={ `blog/${ lastVisitedPostId }` } className="last-post__link">
+                <Link to={ `blog/${ lastVisitedPostId }` } className="last-post__link" state={ { id: lastVisitedPostId } }>
                     <p className="last-post__title">{ lastVisitedPost.title }</p>
                 </Link>
             )}
