@@ -128,3 +128,7 @@ input {
 .login-page__form {
   margin-top: 25px;
 }
+
+.error {
+  color: red;
+}
